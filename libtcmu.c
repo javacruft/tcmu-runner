@@ -845,12 +845,12 @@ uint64_t tcmu_dev_get_num_lbas(struct tcmu_device *dev)
 	return dev->num_lbas;
 }
 
-uint64_t tcmu_lba_to_byte(struct tcmu_device *dev, uint64_t lba)
+size_t tcmu_lba_to_byte(struct tcmu_device *dev, size_t lba)
 {
 	return lba << dev->block_size_shift;
 }
 
-uint64_t tcmu_byte_to_lba(struct tcmu_device *dev, uint64_t byte)
+size_t tcmu_byte_to_lba(struct tcmu_device *dev, size_t byte)
 {
 	return byte >> dev->block_size_shift;
 }
